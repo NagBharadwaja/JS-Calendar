@@ -1,0 +1,29 @@
+#calendar{
+	padding: 10px;
+	width: 210px;
+	height: 280px;
+	text-align: center;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: arial;
+	background: linear-gradient(#fff, #9fa);
+}
+
+#calendar div{
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+#calendar-month-year{
+	margin: 5px;
+	font-weight: bold;
+}
+
+#calendar-dates table tr td{
+	padding: 5px;
+}
+
+.clickableFont{
+	cursor: pointer;
+}
