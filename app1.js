@@ -1,18 +1,20 @@
 //use 'esversion: 6';
 
-window.onload = () => {
-	// Create a new date object
-	var d = new Date();
+var d = new Date();
 	var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 
 					  'July', 'August', 'September', 'October', 'November', 'December'];
 	// Get  month
 	var month = d.getMonth(); // returns 0-11: 0-Jan; 11-Dec
 	var year = d.getFullYear(); // 2017
-
-	render(month_name, month, year);
+	var render;
+	
 
 	var left = document.getElementById("left");
 	var right = document.getElementById("right");
+
+$(document).ready(()=>{
+//window.onload = () => {
+	// Create a new date object
 
 	/*left.onclick = (e) => {
 		if(month === 0){
@@ -45,7 +47,7 @@ window.onload = () => {
 	};*/
 
 	console.log("Current month: ", month);
-};
+//};
 
 var render = (month_name, month, year) => {
 		// Get first date of  month
@@ -106,33 +108,10 @@ var get_calendar = (dayNumber, numDays) => {
 			td.setAttribute('class', 'td-date');
 			td.innerHTML = count;
 			count++;
+			tr.appendChild(td);
 			td.onclick = (e) => {
 				dateClicked(e);
 			};
-			var dateClicked = (e) => {
-				let id = e.target.id;
-				let elem = document.getElementById(id);
-				let span = document.getElementsByClassName("close")[0];
-				let modal = document.getElementById("myModal");
-				console.log("SPAN: ", span);
-				//console.log("Date clicked id: ", id);
-				elem.onclick = (id)=>{
-					modal.style.display = "block";
-				};
-				/*document.getElementById('close').onclick = () => {
-					modal.style.display = "none";
-				};*/
-				console.log(document.getElementById('close'));
-				window.onclick = (e) => {
-					if(e.target == modal){
-						modal.style.display = "none";
-					}
-				};
-				document.getElementById(id).className = "highlightDate";
-			};
-
-			tr.appendChild(td);
-			
 	}
 	console.log("Count days: ", count);
 	table.appendChild(tr);
@@ -159,23 +138,8 @@ var get_calendar = (dayNumber, numDays) => {
 
 			var dateClicked = (e) => {
 				let id = e.target.id;
-				let elem = document.getElementById(id);
-				let span = document.getElementsByClassName("close")[0];
-				let modal = document.getElementById("myModal");
-				console.log("SPAN: ", span);
-				//console.log("Date clicked id: ", id);
-				elem.onclick = (id)=>{
-					modal.style.display = "block";
-				};
-				span.onclick = () => {
-					modal.style.display = "none";
-				};
-				console.log(document.getElementById('close'));
-				window.onclick = (e) => {
-					if(e.target == modal){
-						modal.style.display = "none";
-					}
-				};
+				console.log("Date clicked id: ", id);
+				$('#myModal').modal('toggle');
 				document.getElementById(id).className = "highlightDate";
 			};
 		}
@@ -183,5 +147,9 @@ var get_calendar = (dayNumber, numDays) => {
 	}
 
 	return table;
+}
 
-};
+render(month_name, month, year);
+
+});
+//};

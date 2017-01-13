@@ -2,7 +2,9 @@
 <html>
 	<head>
 		<title>Basic Calendar</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="style.css"/>
 		
@@ -18,9 +20,22 @@
 					<div id="calendar-dates"></div>
 				</div>
 			</div>
-			<div class="col-xs-2">
+			<!--<div class="col-xs-2">
 				<span id="left" class="clickableFont"><i class="material-icons" style="font-size:30px;">chevron_left</i></span>
 				<span id="right" class="clickableFont"><i class="material-icons" style="font-size:30px;">chevron_right</i></span>
+			</div>-->
+		</div>
+		<div class="row">
+			<div id="events">
+				<table></table>
+			</div>
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+  				<div class="modal-content">
+    				<span id="close" class="close">&times;</span>
+    				<p>Some text in the Modal..</p>
+  				</div>
 			</div>
 		</div>
 	</div>
